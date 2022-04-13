@@ -5,60 +5,30 @@ using UnityEngine;
 public class Igreso : MonoBehaviour
 {
     public string nombre;
-    public int año;
+    public int anio;
     public string orientacion;
     // Start is called before the first frame update
     void Start()
     {
 
-
-        if(nombre == "" )
+        if(nombre == "" && anio < 1 || anio > 5)
         {
-            Debug.Log("Rellenar campo de nombre");
-
+            Debug.Log("Error");
+        } else if(orientacion != "T" && orientacion != "M" && orientacion != "G" && orientacion != "H" && orientacion != "D")
+        {
+            Debug.Log("Solo se puede ingresar T, D, M, G, H");
         }
-        else
+        else if (anio < 3)
         {
-            Debug.Log("¡Hola " + nombre + "!");
-        }
-
-        if(año >= 1 & año <= 5)
+           Debug.Log("error. Usted esta en ciclo basico");
+        } else
         {
-            Debug.Log("Usted esta en " + año + " año");
-        }
-        else
-        {
-            Debug.Log("se utilizan numeros del 1 al 5");
+            Debug.Log("Muchas gracias " + nombre);
         }
 
-        if(orientacion != "D" & orientacion != "T" & orientacion != "G" & orientacion != "M" & orientacion != "H")
-        {
-            Debug.Log("Solo se pueden utilizar las letras D,T,G,M,H");
-        }
-        else
-        {
-            switch (orientacion)
-            {
-                case "D": Debug.Log("Usted esta en la orientacion  Diseño");
-                    break;
-                case "T":
-                    Debug.Log("Usted esta en la orientacion  Tic");
-                    break;
-                case "G":
-                    Debug.Log("Usted esta en la orientacion  Gestion");
-                    break;
-                case "M":
-                    Debug.Log("Usted esta en la orientacion  Medios");
-                    break;
-                case "H":
-                    Debug.Log("Usted esta en la orientacion  Humanidades");
-                    break;
 
 
-
-            }
-
-        }
+       
     }
 
 
